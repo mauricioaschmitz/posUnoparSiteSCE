@@ -61,7 +61,28 @@
             } elseif (empty($descricao)) {
                 echo funcAlert("O Campo Descrição é obrigatório!", "warning");
             } else {
-                
+                $nascimento = formataDataBD($dataNasc);
+                $dados = array(
+                    'cpf' => $cpf,
+                    'senha' => $senha,
+                    'nome' => $nome,
+                    'dataNasc' => $nascimento,
+                    'telefone' => $telefone,
+                    'sexo' => $sexo,
+                    'estadoCivil' => $estadoCivil,
+                    'email' => $email,
+                    'cep' => $cep,
+                    'cidade' => $cidade,
+                    'estado' => $estado,
+                    'bairro' => $bairro,
+                    'endereco' => $endereco,
+                    'numero' => $numero,
+                    'complemento' => $complemento
+                );
+                $insere = inserirBD('inscricao', $dados);
+                echo funcAlert("PARABÉNS! Cadastro no SCE realizado com sucesso! Redirecionando para a página de Login. Aguarde!!!", "success");
+                header("Refresh: 3;url=entrar.php");
+                exit();
             }
         } elseif (isset(filter_input_array(INPUT_POST)['cancelar'])) {
             echo funcAlert("Saindo da página de cadastro de Eventos do SCE! Aguarde!!!", "danger");
