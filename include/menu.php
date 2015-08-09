@@ -1,3 +1,4 @@
+<?php if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}?>
 <script src="include/js/scripts.js"></script>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="border-top: 5px solid #000090;">
     <div class="container">
@@ -15,28 +16,20 @@
                 <li><a href="index.php">Início</a></li>
                 <li><a href="eventos.php">Eventos</a></li>
                 <li><a href="contato.php">Contato</a></li>
-            </ul><?php
-            if (session_status() !== PHP_SESSION_ACTIVE) {
-                session_start();
-            }
-            if (!isset($_SESSION['cpf'])) {
-                ?>
-                <ul class="nav navbar-nav navbar-right">
+            </ul><?php if (!isset($_SESSION['cpf'])) {?>
+            <ul class="nav navbar-nav navbar-right">
                     <li><a href="cadastrar.php"><span class="glyphicon glyphicon-user"></span> Cadastrar</a></li>
                     <li><a href="entrar.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
-                </ul><?php } else { ?>
+                </ul><?php } else {?>
                 <ul class="nav navbar-nav navbar-right">
-                <li><a href="inscricaoEventos.php"><span class="glyphicon glyphicon-plus"></span> Cadastrar Evento</a></li>
+                <li><a href="cadastrarEvento.php"><span class="glyphicon glyphicon-plus"></span> Cadastrar Evento</a></li>
                 <li><a href="dados.php"><span class="glyphicon glyphicon-cog"></span> Alterar Dados</a></li>
                 <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
-                </ul><?php } ?>
-        </div><!-- /.navbar-collapse -->
+                </ul><?php }?>
+                </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
 <br>
 <br>
 <br>
 <br>
-<footer class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="border-bottom: 5px solid #000090">
-    <center><p style="padding-top: 15px;">&copy; Desenvolvido por Maurício Antonioli Schmitz - 2015</p></center>
-</footer>

@@ -1,11 +1,11 @@
+<?php include_once('include/menu.php');?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
-        <?php include_once ('include/cabecalho.php');?>
+        <?php include_once('include/cabecalho.php');?>
         <title>Eventos</title>
     </head>
     <body id="inicio">
-        <?php include_once ('include/menu.php');?>
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-xs-12">
@@ -16,7 +16,7 @@
                     <h2 class="text-info text-justify">Sobre o SCE</h2>
                 </div>
                 <div class="col-md-12 col-xs-12">
-                    <h4 class="text-muted text-justify">O Sistema de Cadastro para Eventos tem por finalidade 
+                    <h4 class="text-muted text-justify">O Sistema de Cadastro para Eventos tem por finalidade
                         centralizar em um único ambiente um local para cadastrar as pessoas em determinados eventos.
                         Esses eventos podem ser palestras, workshops, seminários, etc...</h4>
                 </div>
@@ -65,5 +65,6 @@
                 </div>
             </div>
         </div>
+        <?php include_once('include/rodape.php');?>
     </body>
 </html>

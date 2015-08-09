@@ -1,16 +1,13 @@
+<?php include_once ('include/menu.php');
+require ('include/bancoFunc.php');?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <?php include_once ('include/cabecalho.php');?>
+        <?php include_once('include/cabecalho.php');?>
         <title>Eventos</title>
-        <script src="include/js/inputmask.js"></script>
-        <link rel="stylesheet" href="include/css/bootstrap.css">
     </head>
     <body id="eventos">
-        <?php include_once ('include/menu.php');
-        require ('include/bancoFunc.php');
-        ?>
-        <div class="container"> 
+        <div class="container">
             <div class="row">
                 <div class="col-md-12 col-xs-12">
                     <div class="alert alert-info">
@@ -20,12 +17,12 @@
             </div>
             <div class="row">
                 <div class="col-md-2 col-xs-6"  style="margin-left:5px;">
-                    <div class="btn-toolbar"> 
+                    <div class="btn-toolbar">
                         <span class="glyphicon glyphicon-ok" style="color:#44d68a"></span> Inscrições Abertas
                     </div>
                 </div>
                 <div class="col-md-2 col-xs-6">
-                    <div class="btn-toolbar"> 
+                    <div class="btn-toolbar">
                         <span class="glyphicon glyphicon-remove" style="color:red"></span> Inscrições Finalizadas
                     </div>
                 </div>
@@ -33,13 +30,13 @@
             <div class="row">
                 <div class="col-md-12 col-xs-12">
                     <table id="tabela" class="table table-striped">
-                        <thead class="alert alert-warning">       
+                        <thead class="alert alert-warning">
                             <tr>
-                                <th style="text-align: left">Eventos</th>                                                            
-                                <th style="text-align: left">Início</th>          
-                                <th style="text-align: left">Término</th>                                        
-                                <th style="text-align: left">Vagas</th>                                        
-                                <th style="text-align: left"></th>                                        
+                                <th style="text-align: left">Eventos</th>
+                                <th style="text-align: left">Início</th>
+                                <th style="text-align: left">Término</th>
+                                <th style="text-align: left">Vagas</th>
+                                <th style="text-align: left"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,9 +54,9 @@
                             ?>
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>
+        <?php include_once('include/rodape.php');?>
     </body>
 </html>

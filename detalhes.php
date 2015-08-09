@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <?php include_once ('include/cabecalho.php');?>
         <title>Contato</title>
@@ -10,10 +10,10 @@
             <div class="row">
                 <div class="col-md-5 col-xs-12">
                     <table id="tabela" class="table table-striped">
-                        <thead class="alert alert-warning">       
+                        <thead class="alert alert-warning">
                             <tr>
-                                <th style="text-align: left">Campo</th>                                                            
-                                <th style="text-align: left">Valor</th>                                                                                      
+                                <th style="text-align: left">Campo</th>
+                                <th style="text-align: left">Valor</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,6 +39,6 @@
                 </div>
             </div>
         </div>
+        <?php include_once('include/rodape.php');?>
     </body>
 </html>
-

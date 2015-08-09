@@ -6,7 +6,6 @@ $(function () {
     $("#contato a:contains('Contato')").parent().addClass('active');
     $("#cadastrar a:contains('Cadastrar')").parent().addClass('active');
     $("#entrar a:contains('Entrar')").parent().addClass('active');
-    
     /*
     if ($("#photographer_pack a:contains('Photographer\'s Package')").parent().hasClass('active')) {
         $(".dropdown a:contains('Our Programs')").parent().addClass('active');

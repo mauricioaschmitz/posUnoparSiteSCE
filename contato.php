@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <?php include_once ('include/cabecalho.php');?>
         <title>Contato</title>
@@ -22,42 +22,43 @@
                                 <div class = "alert alert-info">
                                     <p>Envie sua dúvida ou entre em contato pelo email <strong>mauricioantonioli@gmail.com</strong></p>
                                 </div>
-                            </div>                   
-                        </div>    
+                            </div>
+                        </div>
                         <div class ="row">
                             <div class="col-md-6 form-group">
                                 <label style="float: left">Nome</label>
                                 <input class = "form-control" type="text" name="nome" id="nome" value=""/>
-                            </div>                   
+                            </div>
                         </div>
                         <div class ="row">
                             <div class="col-md-6 form-group">
                                 <label style="float: left">E-mail</label>
                                 <input class = "form-control" type="text" name="email" id="email" value=""/>
-                            </div>                    
+                            </div>
                         </div>
                         <div class ="row">
                             <div class="col-md-6 form-group">
                                 <label style="float: left">Telefone</label>
                                 <input data-mask ="(99)9999-9999" class = "form-control" type="text" name="fone" id="fone" value=""/>
-                            </div>                    
+                            </div>
                         </div>
                         <div class ="row">
                             <div class="col-md-6 form-group">
                                 <label style="float: left">Assunto</label>
                                 <input class = "form-control" type="text" name="assunto" id="assunto" value=""/>
-                            </div>                    
+                            </div>
                         </div>
                         <div class ="row">
-                            <div class="col-md-6 form-group">    
+                            <div class="col-md-6 form-group">
                                 <label style="float: left" for="mensagem">Mensagem: </label>
                                 <textarea rows="6" class="form-control" name="mensagem" id="mensagem"></textarea>
-                            </div>                    
+                            </div>
                         </div>
                         <button type="submit" name="gravar" class="btn btn-primary">Enviar</button>
                     </form>
                 </div>
             </div>
         </div>
+        <?php include_once('include/rodape.php');?>
     </body>
 </html>
