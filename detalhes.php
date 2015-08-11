@@ -41,7 +41,7 @@ if (!(isset($_SESSION['cpf']) && $_SESSION['cpf'] != '')) {
         header("Refresh: 0;url=eventos.php");
     }
     if (isset(filter_input_array(INPUT_POST)['inscritos'])) {
-        header("Refresh: 0;url=index.php");
+        header("Refresh: 0;url=inscritos.php?id=".$id);
     }
 }
 ?>
