@@ -1,4 +1,3 @@
-<?php if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}?>
 <script src="include/js/scripts.js"></script>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="border-top: 5px solid #000090;">
     <div class="container">

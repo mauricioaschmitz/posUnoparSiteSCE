@@ -10,7 +10,7 @@ function inserirBD($tabela, array $dados) {
     $campos = implode(", ", array_keys($dados));
     $valores = "'" . implode("', '", array_values($dados)) . "'";
     $valores = str_replace("''", "NULL", $valores);
-    $inserir = "INSERT INTO {$tabela} ($campos) VALUES ($valores)";
+    $inserir = "INSERT INTO $tabela ($campos) VALUES ($valores)";
     $teste = mysqli_query($conexao, $inserir) or die('Erro ao cadastrar em ' . $tabela . ' ' . mysqli_error($conexao));
 
     return $teste;
@@ -56,22 +56,21 @@ function atualizarBD($tabela, $dados, $condicao) {
 
     $teste = mysqli_query($conexao, $atualizar) or die('Erro ao atualizar em ' . $tabela . ' ' . mysqli_error($conexao));
 
-    if ($teste) {
-        return true;
-    }
+    return $teste;
 }
 
 /* * ***************************************
   FUNÇÃO DELETAR DADOS DO BANCO DE DADOS
  * *************************************** */
 
-function delete($tabela, $where) {
-    $qrDelete = "DELETE FROM {$tabela} WHERE {$where}";
-    $stDelete = mysql_query($qrDelete) or die('Erro ao atualizar em ' . $tabela . ' ' . mysql_error());
+function deletarBD($tabela, $condicao) {
+    $conexao = mysqli_connect('localhost', 'root', 'senha.123', 'scebd') or die('Erro ao conectar: ' . mysqli_error($conexao));
+    mysqli_query($conexao, "SET NAMES 'utf8'");
+    $deletar = "DELETE FROM {$tabela} {$condicao}";
+    
+    $teste = mysqli_query($conexao, $deletar) or die('Erro ao atualizar em ' . $tabela . ' ' . mysqli_error($conexao));
 
-    if ($stDelete) {
-        return true;
-    }
+    return $teste;
 }
 
 /* * ***************************************
@@ -101,5 +100,3 @@ function formataDataHTML($recebeData) {
 
     return $resultado;
 }
-
-?>

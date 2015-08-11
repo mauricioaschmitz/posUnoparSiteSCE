@@ -1,9 +1,13 @@
 <?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 require('include/bancoFunc.php');
 require('include/funcoes.php');
 $cpfcadastrado = false;
 $inseriu = false;
 $cancelar = false;
+$dados = '';
 if (isset(filter_input_array(INPUT_POST)['cadastrar'])) {
     $cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
@@ -46,6 +50,7 @@ if (isset(filter_input_array(INPUT_POST)['cadastrar'])) {
         $insere = inserirBD('inscricao', $dados);
         $inseriu = true;
         header("Refresh: 3;url=entrar.php");
+        
     }
 } else {
     $cpf = '';
@@ -126,7 +131,7 @@ if (isset(filter_input_array(INPUT_POST)['cancelar'])) {
                     <div class ="row">
                         <div class="col-md-6 col-xs-6 form-group">
                             <label style="float: left">CPF *</label>
-                            <input data-mask="999.999.999-99" class = "form-control" type="text" name="cpf" id="cpf" value="<?php
+                            <input data-mask="999.999.999-99" class = "form-control" type="tel" name="cpf" id="cpf" value="<?php
                                    if (isset($cpf)) {
                                        echo $cpf;
                                    }
@@ -302,7 +307,7 @@ if (isset(filter_input_array(INPUT_POST)['cancelar'])) {
                     </div>
                     <br>
                     <button type="submit" name="cadastrar" class="btn btn-success">Enviar dados!</button>
-                    <button type="submit" name="cancelar" class="btn btn-danger">Cancelar!</button>
+                    <button type="submit" name="cancelar" class="btn btn-primary">Cancelar!</button>
                 </form>
             </div>
         </div>

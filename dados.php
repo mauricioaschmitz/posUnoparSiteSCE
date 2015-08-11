@@ -7,6 +7,8 @@ require('include/funcoes.php');
 $naologado = false;
 $atualizado = false;
 $cancelar = false;
+$apagar = false;
+
 if (!(isset($_SESSION['cpf']) && $_SESSION['cpf'] != '')) {
     $naologado = true;
     header("Refresh: 3;url=entrar.php");
@@ -60,6 +62,9 @@ if (!(isset($_SESSION['cpf']) && $_SESSION['cpf'] != '')) {
     } elseif (isset(filter_input_array(INPUT_POST)['cancelar'])) {
         $cancelar = true;
         header("Refresh: 3;url=index.php");
+    } elseif (isset(filter_input_array(INPUT_POST)['apagar'])) {
+        $apagar = true;
+        header("Refresh: 0;url=apagar.php");
     }
 }
 ?>
@@ -258,7 +263,8 @@ if (!(isset($_SESSION['cpf']) && $_SESSION['cpf'] != '')) {
                     </div>
                     <br>
                     <button type="submit" name="atualizar" class="btn btn-success">Atualizar dados!</button>
-                    <button type="submit" name="cancelar" class="btn btn-danger">Cancelar!</button>
+                    <button type="submit" name="cancelar" class="btn btn-primary">Cancelar!</button>
+                    <button type="submit" name="apagar" class="btn btn-danger pull-right">Apagar Conta!</button>
                 </form>
             </div>
         </div>

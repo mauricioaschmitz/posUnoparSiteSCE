@@ -1,4 +1,8 @@
-<?php include_once('include/menu.php');?>
+<?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -6,6 +10,7 @@
         <title>Eventos</title>
     </head>
     <body id="inicio">
+        <?php include_once('include/menu.php');?>
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-xs-12">
@@ -16,9 +21,13 @@
                     <h2 class="text-info text-justify">Sobre o SCE</h2>
                 </div>
                 <div class="col-md-12 col-xs-12">
-                    <h4 class="text-muted text-justify">O Sistema de Cadastro para Eventos tem por finalidade
+                    <h4 class="text-muted text-justify">O Sistema de Cadastro para Eventos (SCE) tem por finalidade
                         centralizar em um único ambiente um local para cadastrar as pessoas em determinados eventos.
-                        Esses eventos podem ser palestras, workshops, seminários, etc...</h4>
+                        Esses eventos podem ser palestras, workshops, seminários, entre outros. Aproveite e desfrute 
+                        do ambiente e se possuir alguma dúvida <strong><a href="contato.php">clique aqui</a></strong>
+                        para entrar em contato com o SCE.
+                    </h4>
+                    <br>
                 </div>
             </div>
             <div class="row">

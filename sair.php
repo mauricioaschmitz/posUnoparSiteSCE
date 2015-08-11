@@ -1,8 +1,8 @@
 <?php
-require('include/funcoes.php');
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
+require('include/funcoes.php');
 unset($_SESSION['cpf']);
 unset($_SESSION['senha']);
 unset($_SESSION['nome']);

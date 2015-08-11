@@ -20,14 +20,75 @@ function funcAlert($mensagem, $tipo) {
   FUNÇÃO: VALIDAÇÃO DE DATA
  * *************************************** */
 
-function validaData($dataNasc) {
-    $data = explode('/', $dataNasc);
+function validaData($dataRec) {
+    $data = explode('/', $dataRec);
 
     $dia = $data[0];
     $mes = $data[1];
     $ano = $data[2];
 
     if ($ano <= date('Y') && $ano > 1880) {
+        return checkdate($mes, $dia, $ano);
+    } else {
+        return false;
+    }
+}
+
+function validaDataMaior($dataEvento, $dataInscricoes) {
+    $data1 = explode('/', $dataEvento);
+    $data2 = explode('/', $dataInscricoes);
+
+    $dia1 = $data1[0];
+    $mes1 = $data1[1];
+    $ano1 = $data1[2];
+    
+    $dia2 = $data2[0];
+    $mes2 = $data2[1];
+    $ano2 = $data2[2];
+
+    if ($ano2 > $ano1) {
+        return false;
+    } 
+    if ($ano2 == $ano1) {
+        if($mes2 > $mes1){
+            return false;
+        } elseif ($mes2 == $mes1){
+            if($dia2 <= $dia1){
+                return true;
+            }
+        } else{
+            return true;
+        }
+    }
+    if ($ano2 < $ano1) {
+        return true;
+    }
+}
+
+/* * ***************************************
+  FUNÇÃO: VALIDAÇÃO DE DATA MAIOR QUE A ATUAL
+ * *************************************** */
+
+function validaDataPosteriorAtual($dataRec) {
+    $data = explode('/', $dataRec);
+
+    $dia = $data[0];
+    $mes = $data[1];
+    $ano = $data[2];
+
+    if ($ano == date('Y')) {
+        if($mes == date('m')){
+            if($dia > date('d')){
+                return checkdate($mes, $dia, $ano);
+            }else {
+                return false;
+            }
+        } elseif ($mes > date('m')){
+            return checkdate($mes, $dia, $ano);
+        } else {
+            return false;
+        }
+    } elseif ($ano > date('Y')) {
         return checkdate($mes, $dia, $ano);
     } else {
         return false;
@@ -63,5 +124,3 @@ function validaCPF($cpfrec) {
         return true;
     }
 }
-
-?>
