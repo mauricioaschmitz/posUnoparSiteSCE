@@ -1,0 +1,16 @@
+INSERT INTO inscricao (cpf, senha, nome, dataNasc, telefone, sexo, estadoCivil, email, cep, cidade, estado, bairro, endereco, numero, complemento) VALUES 
+('usosala585.350.498-35', 
+'nine', 
+'Assunta Piovesan Neta', 
+'1987-07-23', 
+'(54)9906-6412', 
+'M', 
+'Solteiro(a)', 
+'mauricioantonioli@gmail.com', 
+'99170-000', 
+'Sertão', 
+'Rio Grande do Sul', 
+'Centro', 
+'Av Góis Monteiro', 
+'541', 
+'Casa')

@@ -21,7 +21,7 @@ header("Refresh: 3;url=index.php");
         <?php
         include_once ('include/menu.php');
         echo funcAlert("Saindo do SCE! Aguarde redirecionamento para a página principal. "
-                . "Caso a página de principal não tenha carregado <a href='index.php'>clique aqui.</a>", "danger");
+                . "Caso a mesmal não tenha carregado <a href='index.php'>clique aqui.</a>", "danger");
         include_once('include/rodape.php');
         ?>
     </body>

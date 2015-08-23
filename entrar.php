@@ -65,7 +65,7 @@ if (isset(filter_input_array(INPUT_POST)['entrar'])) { // Testa se o POST foi en
                     }
                     if ($logado) {
                         echo funcAlert("Autenticado com Sucesso! Aguarde redirecionamento para a página principal. "
-                                . "Caso a página de principal não tenha carregado <a href='index.php'>clique aqui.</a>", "success");
+                                . "Caso a página principal não tenha carregado <a href='index.php'>clique aqui.</a>", "success");
                     }
                 }
             }
